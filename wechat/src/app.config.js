@@ -1,6 +1,6 @@
 module.exports = {
   pages: ['pages/index/index'],
   window: {
-    defaultTitle: 'Remax Alipay Benchmark',
-  },
+    navigationTitleText: 'Remax Wechat Native Benchmark'
+  }
 };

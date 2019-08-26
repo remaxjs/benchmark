@@ -31,9 +31,21 @@ const A = [
   'inexpensive',
   'cheap',
   'expensive',
-  'fancy',
+  'fancy'
 ];
-const C = ['red', 'yellow', 'blue', 'green', 'pink', 'brown', 'purple', 'brown', 'white', 'black', 'orange'];
+const C = [
+  'red',
+  'yellow',
+  'blue',
+  'green',
+  'pink',
+  'brown',
+  'purple',
+  'brown',
+  'white',
+  'black',
+  'orange'
+];
 const N = [
   'table',
   'chair',
@@ -47,7 +59,7 @@ const N = [
   'burger',
   'pizza',
   'mouse',
-  'keyboard',
+  'keyboard'
 ];
 
 let nextId = 1;
@@ -57,7 +69,9 @@ function buildData(count) {
   for (let i = 0; i < count; i++) {
     data[i] = {
       id: nextId++,
-      label: `${A[random(A.length)]} ${C[random(C.length)]} ${N[random(N.length)]}`,
+      label: `${A[random(A.length)]} ${C[random(C.length)]} ${
+        N[random(N.length)]
+      }`
     };
   }
   return data;
@@ -73,22 +87,24 @@ class Row extends React.Component {
   };
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.item !== this.props.item || nextProps.selected !== this.props.selected;
+    return (
+      nextProps.item !== this.props.item ||
+      nextProps.selected !== this.props.selected
+    );
   }
 
   render() {
     let { selected, item } = this.props;
     return (
       <View
-        className={selected ? 'danger' : ''}
         style={{ display: 'flex', border: '1px solid #ccc', padding: '8rpx 0' }}
       >
         <View style={{ width: '10%' }}>{item.id}</View>
         <View className="col-md-4">
-          <Text onClick={this.onSelect}>{item.label}</Text>
+          <Text>{item.label}</Text>
         </View>
         <View style={{ width: '10%', paddingLeft: '32rpx' }}>
-          <View onClick={this.onRemove}>x</View>
+          <View>x</View>
         </View>
       </View>
     );
@@ -98,7 +114,12 @@ class Row extends React.Component {
 function Btn({ id, cb, title }) {
   return (
     <View className="col-sm-6 smallpad">
-      <Button type="button" className="btn btn-primary btn-block" id={id} onClick={cb}>
+      <Button
+        type="button"
+        className="btn btn-primary btn-block"
+        id={id}
+        onClick={cb}
+      >
         {title}
       </Button>
     </View>
@@ -133,7 +154,7 @@ class Jumbotron extends React.Component {
 export default class Main extends React.Component {
   state = {
     data: [],
-    selected: 0,
+    selected: 0
   };
 
   run = () => {
@@ -141,7 +162,10 @@ export default class Main extends React.Component {
   };
 
   add = () => {
-    this.setState({ data: this.state.data.concat(buildData(500)), selected: this.state.selected });
+    this.setState({
+      data: this.state.data.concat(buildData(500)),
+      selected: this.state.selected
+    });
   };
 
   update = () => {

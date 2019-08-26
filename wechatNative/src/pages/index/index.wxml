@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="jumbotron">
+    <view class="row">
+      <view class="col-md-6">
+        <view class="row">
+          <view class="col-sm-6 smallpad">
+            <button class="btn btn-primary btn-block" id="{{item.id}}" bindtap="run">
+              Create 500 rows
+            </button>
+          </view>
+          <view class="col-sm-6 smallpad">
+            <button class="btn btn-primary btn-block" id="{{id}}" bindtap="add">
+              Append 500 rows
+            </button>
+          </view>
+          <view class="col-sm-6 smallpad">
+            <button class="btn btn-primary btn-block" id="{{id}}" bindtap="update">
+              Update every 10th row
+            </button>
+          </view>
+          <view class="col-sm-6 smallpad">
+            <button class="btn btn-primary btn-block" id="{{id}}" bindtap="clear">
+              Clear
+            </button>
+          </view>
+          <view class="col-sm-6 smallpad">
+            <button class="btn btn-primary btn-block" id="{{id}}" bindtap="swapRows">
+              Swap Rows
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="table table-hover table-striped test-data">
+    <view wx:for="{{data}}" wx:key="index" style="display: flex;border: 1px solid #ccc;padding: 8rpx 0;">
+      <view style="width: 10%">{{item.id}}</view>
+      <view class="col-md-4">
+        <text>{{item.label}}</text>
+      </view>
+      <view style="width: 10%;padding-left: 32rpx;">
+        <view bindtap="{{onRemove}}">x</view>
+      </view>
+    </view>
+  </view>
+</view>

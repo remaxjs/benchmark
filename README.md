@@ -4,16 +4,10 @@
 
 ## 结果
 
-测试机器：iPhone 6s iOS 12.4
-
-| 操作            | Remax 支付宝 |
-| --------------- | ------------ |
-| Create 500 rows | 1589.8ms     |
-
 测试机器：Google Pixel 3 Android 9
 
-| 操作                    | Remax 微信                  |
-| ----------------------- | --------------------------- |
-| Create 500 rows         | 457.9ms                     |
-| Update every 10th row   | 219.1ms                     |
-| append 500 rows 4 times | 590ms, 675ms, 833ms, 1325ms |
+| 操作                    | Remax 微信                 | 原生微信                   |
+| ----------------------- | -------------------------- | -------------------------- |
+| Create 500 rows         | 457.9ms                    | 208.3                      |
+| Update 50 rows          | 179.1ms                    | 10ms                       |
+| append 500 rows 4 times | 392ms, 602ms, 720ms, 868ms | 218ms, 198ms, 234ms, 210ms |
