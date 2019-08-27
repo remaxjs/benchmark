@@ -94,16 +94,14 @@ class Row extends React.Component {
   }
 
   render() {
-    let { selected, item } = this.props;
+    let { item } = this.props;
     return (
-      <View
-        style={{ display: 'flex', border: '1px solid #ccc', padding: '8rpx 0' }}
-      >
-        <View style={{ width: '10%' }}>{item.id}</View>
-        <View className="col-md-4">
+      <View className="r">
+        <View className="rt">{item.id}</View>
+        <View>
           <Text>{item.label}</Text>
         </View>
-        <View style={{ width: '10%', paddingLeft: '32rpx' }}>
+        <View className="cl">
           <View>x</View>
         </View>
       </View>

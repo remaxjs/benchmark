@@ -24,3 +24,18 @@ body {
 .jumbotron .row h1 {
   font-size: 40px;
 }
+
+.r {
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 8rpx 0;
+}
+
+.rt {
+  width: 10%;
+}
+
+.cl {
+  width: 10%;
+  padding-left: 32px;
+}
