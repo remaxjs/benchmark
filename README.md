@@ -8,6 +8,6 @@
 
 | 操作                    | Remax 微信                 | 原生微信                   |
 | ----------------------- | -------------------------- | -------------------------- |
-| Create 500 rows         | 333.7ms                    | 208.3ms                      |
-| Update 50 rows          | 116.3ms                    | 10ms                       |
-| append 500 rows 4 times | 327ms, 425ms, 639ms, 612ms | 218ms, 198ms, 234ms, 210ms |
+| Create 500 rows         | 278ms                      | 208.3ms                    |
+| Update 50 rows          | 110.6ms                    | 10ms                       |
+| append 500 rows 4 times | 312ms, 377ms, 567ms, 594ms | 218ms, 198ms, 234ms, 210ms |
