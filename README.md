@@ -2,6 +2,8 @@
 
 使用 https://github.com/krausest/js-framework-benchmark 的代码来测试 Remax 的性能。
 
+时间统计方式是从 `setData` 调用，到回调回来的时间。
+
 ## 结果
 
 测试机器：Google Pixel 3 Android 9
