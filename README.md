@@ -8,11 +8,11 @@
 
 测试机器：Google Pixel 3 Android 9
 
-| 操作                    | Remax 微信                 | 原生微信                   |
-| ----------------------- | -------------------------- | -------------------------- |
-| Create 500 rows         | 278ms                      | 208.3ms                    |
-| Update 50 rows          | 110.6ms                    | 10ms                       |
-| append 500 rows 4 times | 312ms, 377ms, 567ms, 594ms | 218ms, 198ms, 234ms, 210ms |
+| 操作                    | Remax 微信               | 原生微信                |
+| ----------------------- | ------------------------ | ----------------------- |
+| Create 500 rows         | 473.4ms                  | 212.7ms                 |
+| Update 50 rows          | 232.1ms                  | 23.9ms                  |
+| append 500 rows 4 times | 543ms 679ms 965ms 1191ms | 252ms 458ms 240ms 234ms |
 
 测试机器：iPhone 6s iOS 12.4
 
