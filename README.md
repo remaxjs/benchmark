@@ -12,12 +12,10 @@
 | Update 50 rows          | 110.6ms                    | 10ms                       |
 | append 500 rows 4 times | 312ms, 377ms, 567ms, 594ms | 218ms, 198ms, 234ms, 210ms |
 
-
 测试机器：iPhone 6s iOS 12.4
 
-| 操作                    | Remax 支付宝                 | 原生支付宝                   |
-| ----------------------- | -------------------------- | -------------------------- |
-| Create 500 rows         | 1339ms                     | 889ms                      |
-| Update 50 rows          |                            |                            |
-| append 500 rows 4 times |                            |                            |
-
+| 操作                    | Remax 支付宝 | 原生支付宝 | Remax 微信 | 原生微信 |
+| ----------------------- | ------------ | ---------- | ---------- | -------- |
+| Create 500 rows         | 1339ms       | 889ms      | 993ms      | 297ms    |
+| Update 50 rows          |              |            |            |          |
+| append 500 rows 4 times |              |            |            |          |
