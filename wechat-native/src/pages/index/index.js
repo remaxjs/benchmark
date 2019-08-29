@@ -27,21 +27,9 @@ const A = [
   'inexpensive',
   'cheap',
   'expensive',
-  'fancy'
+  'fancy',
 ];
-const C = [
-  'red',
-  'yellow',
-  'blue',
-  'green',
-  'pink',
-  'brown',
-  'purple',
-  'brown',
-  'white',
-  'black',
-  'orange'
-];
+const C = ['red', 'yellow', 'blue', 'green', 'pink', 'brown', 'purple', 'brown', 'white', 'black', 'orange'];
 const N = [
   'table',
   'chair',
@@ -55,7 +43,7 @@ const N = [
   'burger',
   'pizza',
   'mouse',
-  'keyboard'
+  'keyboard',
 ];
 
 let nextId = 1;
@@ -65,9 +53,7 @@ function buildData(count) {
   for (let i = 0; i < count; i++) {
     data[i] = {
       id: nextId++,
-      label: `${A[random(A.length)]} ${C[random(C.length)]} ${
-        N[random(N.length)]
-      }`
+      label: `${A[random(A.length)]} ${C[random(C.length)]} ${N[random(N.length)]}`,
     };
   }
   return data;
@@ -76,27 +62,39 @@ function buildData(count) {
 Page({
   data: {
     data: [],
-    selected: 0
+    selected: 0,
   },
 
   run: function() {
-    this.setData({ data: buildData(500), selected: 0 });
-  },
-
-  add: function() {
-    this.setData({
-      data: this.data.data.concat(buildData(500)),
-      selected: this.data.selected
+    const startTime = new Date().getTime();
+    this.setData({ data: buildData(500), selected: 0 }, () => {
+      console.log(`run => 回调时间：${new Date().getTime() - startTime}ms`);
     });
   },
 
+  add: function() {
+    const startTime = new Date().getTime();
+    this.setData(
+      {
+        data: this.data.data.concat(buildData(500)),
+        selected: this.data.selected,
+      },
+      () => {
+        console.log(`add => 回调时间：${new Date().getTime() - startTime}ms`);
+      },
+    );
+  },
+
   update: function() {
+    const startTime = new Date().getTime();
     const data = this.data.data;
     for (let i = 0; i < data.length; i += 10) {
       const item = data[i];
       data[i] = { id: item.id, label: item.label + ' !!!' };
     }
-    this.setData({ data: data });
+    this.setData({ data: data }, () => {
+      console.log(`update => 回调时间：${new Date().getTime() - startTime}ms`);
+    });
   },
 
   select: function(item) {
@@ -110,7 +108,10 @@ Page({
   },
 
   clear: function() {
-    this.setData({ data: [], selected: 0 });
+    const startTime = new Date().getTime();
+    this.setData({ data: [], selected: 0 }, () => {
+      console.log(`clear => 回调时间：${new Date().getTime() - startTime}ms`);
+    });
   },
 
   swapRows: function() {
@@ -121,5 +122,5 @@ Page({
       data[998] = temp;
     }
     this.setData({ data: data });
-  }
+  },
 });
