@@ -2,7 +2,7 @@
 
 使用 https://github.com/krausest/js-framework-benchmark 的代码来测试 Remax 的性能。
 
-时间统计方式是从 `setData` 调用，到回调回来的时间。
+时间统计方式是从 `setData` 调用，到回调回来的时间，取 10 次的平均值。
 
 ## 结果
 
@@ -16,8 +16,8 @@
 
 测试机器：iPhone 6s iOS 12.4
 
-| 操作                    | Remax 支付宝 | 原生支付宝 | Remax 微信 | 原生微信 |
-| ----------------------- | ------------ | ---------- | ---------- | -------- |
-| Create 500 rows         | 1339ms       | 889ms      | 993ms      | 297ms    |
-| Update 50 rows          |              |            |            |          |
-| append 500 rows 4 times |              |            |            |          |
+| 操作                    | Remax 支付宝                | 原生支付宝                 | Remax 微信 | 原生微信 |
+| ----------------------- | --------------------------- | -------------------------- | ---------- | -------- |
+| Create 500 rows         | 510ms                       | 376ms                      | 993ms      | 297ms    |
+| Update 50 rows          | 170ms                       | 96ms                       |            |          |
+| append 500 rows 4 times | 675ms, 861ms, 939ms, 1383ms | 460ms, 441ms, 442ms, 723ms |            |          |

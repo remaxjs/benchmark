@@ -68,7 +68,10 @@ Page({
   run: function() {
     const startTime = new Date().getTime();
     this.setData({ data: buildData(500), selected: 0 }, () => {
-      console.log(`run => 回调时间：${new Date().getTime() - startTime}ms`);
+      my.showToast({
+        content: `run => 回调时间：${new Date().getTime() - startTime}ms`,
+        duration: 3000,
+      });
     });
   },
 
@@ -80,7 +83,10 @@ Page({
         selected: this.data.selected,
       },
       () => {
-        console.log(`add => 回调时间：${new Date().getTime() - startTime}ms`);
+        my.showToast({
+          content: `add => 回调时间：${new Date().getTime() - startTime}ms`,
+          duration: 3000,
+        });
       },
     );
   },
@@ -93,7 +99,10 @@ Page({
       data[i] = { id: item.id, label: item.label + ' !!!' };
     }
     this.setData({ data: data }, () => {
-      console.log(`update => 回调时间：${new Date().getTime() - startTime}ms`);
+      my.showToast({
+        content: `update => 回调时间：${new Date().getTime() - startTime}ms`,
+        duration: 3000,
+      });
     });
   },
 
@@ -110,7 +119,10 @@ Page({
   clear: function() {
     const startTime = new Date().getTime();
     this.setData({ data: [], selected: 0 }, () => {
-      console.log(`clear => 回调时间：${new Date().getTime() - startTime}ms`);
+      my.showToast({
+        content: `clear => 回调时间：${new Date().getTime() - startTime}ms`,
+        duration: 3000,
+      });
     });
   },
 
