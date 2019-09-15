@@ -1,0 +1,3 @@
+  <view class="col-md-4">
+    <text>{{_h.v(item.label)}}</text>
+  </view>

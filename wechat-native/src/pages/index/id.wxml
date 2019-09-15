@@ -1,0 +1,1 @@
+  <view style="width: 10%">{{_h.v(item.id)}}</view>
