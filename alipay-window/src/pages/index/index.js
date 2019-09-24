@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, Button } from 'remax/alipay';
-import { FixedSizeList } from 'remax-window/alipay';
+import { FixedSizeList } from 'remax-window';
 import './index.css';
 
 function random(max) {
@@ -72,7 +72,7 @@ function buildData(count) {
       id: nextId++,
       label: `${A[random(A.length)]} ${C[random(C.length)]} ${
         N[random(N.length)]
-      }`
+        }`
     };
   }
   return data;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, Button } from 'remax/wechat';
-import { FixedSizeList } from 'remax-window/wechat';
+import { FixedSizeList } from 'remax-window';
 import './index.css';
 
 function random(max) {
