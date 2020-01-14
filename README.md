@@ -2,7 +2,7 @@
 
 使用 https://github.com/krausest/js-framework-benchmark 的代码来测试 Remax 的性能。
 
-时间统计方式是从 `setData` 调用，到回调回来的时间，取 10 次的平均值。
+时间统计方式是从点击按钮开始，到setData回调回来的时间，取 10 次的平均值。
 
 ## 结果
 
